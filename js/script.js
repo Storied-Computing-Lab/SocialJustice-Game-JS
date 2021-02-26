@@ -69,7 +69,7 @@ monogatari.assets ('images', {
 
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
-
+	"the_center": "tinian-japaneseGate.png"
 });
 
 
@@ -82,7 +82,26 @@ monogatari.characters ({
 
 	'c': {
 		name: 'Clara',
-		color: '#008080'
+		color: '#008080',
+		directory: 'clara',
+		sprites: {
+			"phone": "clara_phone.png",
+			"neutral_open": "clara_neutral_eyes_open.png",
+			"neutral_closed": "clara_neutral_eyes_closed.png",
+			"pointer_open": "clara_pointer_left_eyes_open.png",
+			"pointer_closed": "clara_pointer_left_eyes_closed.png"
+		}
+	},
+
+	'n': {
+		name: 'Niko',
+		color: '#008080',
+		directory: 'niko',
+		sprites: {
+			"slight_smile": "niko_neutral_eyes_slight_smile.png",
+			"neutral": "niko_neutral_eyes_neutral.png",
+			"worried": "niko_neutral_eyes_worried.png"
+		}
 	}
 });
 
