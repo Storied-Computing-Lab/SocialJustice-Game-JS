@@ -28,11 +28,64 @@ const { $_ready, $_ } = Monogatari;
 // 1. Outside the $_ready function:
 
 
+// Create statistics screen
+
+// *need to add variables for character att.
+class StatisticsScreen extends Monogatari.ScreenComponent {
+
+    static setup () {
+        this.engine.translation('English', {
+            Statistics: 'Statistics'
+        });
+        return Promise.resolve ();
+    }
+
+    static bind () {
+        this.engine.component ('main-menu').addButtonAfter ('Load', {
+            string: 'Statistics',
+            data: {
+                action: 'open-screen',
+                open: 'statistics'
+            }
+        });
+        return Promise.resolve ();
+    }
+
+    constructor (...args) {
+        super(...args);
+    }
+
+
+
+    render () {
+        return `
+            <button class="top left" data-action="back"><span class="fas fa-arrow-left"></span></button>
+            <h2 data-string="Statistics">Statistics</h2>
+            <div class="column column--spaced" data-content="help">
+				<h2>Critique</h2>
+				<p>Stand your ground: ${monogatari.storage().s_y_g}
+				<br> Challenge norms: ${monogatari.storage().c_n}
+				</p>
+			</div>
+			<div class="column column--spaced" data-content="help">
+				<h2>Imagine</h2>
+				<p>Reclaim our imagination: ${monogatari.storage().r_o_i}</p>
+			</div>
+        `;
+    }
+}
+
+StatisticsScreen.tag = 'statistics-screen';
+
 $_ready (() => {
 	// 2. Inside the $_ready function:
+
+	monogatari.registerComponent(StatisticsScreen);
 
 	monogatari.init ('#monogatari').then (() => {
 		// 3. Inside the init function:
 
 	});
 });
+
+

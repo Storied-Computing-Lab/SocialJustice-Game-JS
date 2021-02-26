@@ -17,7 +17,7 @@ monogatari.settings({
 	// The name of your game, this will be used to store all the data so once
 	// you've released a game using one name, it shouldn't change. Please use the
 	// Version Setting to indicate a new release of your game!
-	'Name': 'My Visual Novel',
+	'Name': 'Guaiya Means Love',
 
 	// The version of your game in semantic versioning (https://semver.org/).
 	'Version': '0.1.0',
@@ -158,3 +158,20 @@ monogatari.preferences ({
 	// completely displayed.
 	'AutoPlaySpeed': 5
 });
+
+// // Create Statistics Screen
+
+// // * Need to implement storage variables for character attributes
+
+// monogatari.component ('statistics-screen').template (() => {
+//     return `
+// 		<div> 
+// 			<h2>Critique</h2>
+// 			<p>Stand your ground: 0</p>
+// 		</div>
+// 		<div>
+// 			<h2>Imagine</h2>
+// 			<p>Reclaim our Imagination: 0</p>
+// 		</div>
+// 	`;
+// });

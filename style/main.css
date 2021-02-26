@@ -34,6 +34,7 @@ button:hover {
 
 /* General Styling for Menu Screens */
 [data-screen] {
+	
 
 }
 
@@ -45,8 +46,10 @@ button:hover {
 
 /* Main Menu Styling */
 [data-screen="main"] {
-
+	background-image: url("../assets/ui/main_menu.png")
 }
+
+
 
 /* Main Menu Buttons Styling */
 [data-screen="main"] button {
@@ -58,6 +61,13 @@ button:hover {
  * Save and Load Menus Styling
  * ===========================
 **/
+
+
+/* Load Menu Styling */
+[data-screen="load"] {
+	background-image: url("../assets/ui/main_menu.png")
+}
+
 
 /* Slots Style */
 [data-component="save-slot"] figure {
@@ -120,6 +130,26 @@ button:hover {
 
 }
 
+/**
+ * ===========================
+ * Statistics Menu Styling
+ * ===========================
+**/
+
+[data-screen="statistics"] {
+	background-image: url("../assets/ui/main_menu.png")
+}
+
+
+/**
+ * ===========================
+ * Settings Menu Styling
+ * ===========================
+**/
+
+[data-screen="settings"] {
+	background-image: url("../assets/ui/main_menu.png")
+}
 
 
 /**
