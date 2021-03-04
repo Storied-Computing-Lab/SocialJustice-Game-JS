@@ -13,4 +13,5 @@ monogatari.storage ({
 	s_y_g: 0,
 	c_n: 0,
 	r_o_i: 0,
+	hack_1: false,
 });

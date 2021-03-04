@@ -54,17 +54,28 @@ monogatari.script ({
             
             "Flexible": {
                 "Text": "I'm pretty flexible",
-                "Do": monogatari.storage().s_y_g += 10, 
+                "Do": () => {
+                    const s_y_g = monogatari.storage('s_y_g');
+                    monogatari.storage({
+                        s_y_g: s_y_g + 10,
+                    });
+
+                } 
 
             },
 
             "Perspective": {
                 "Text": "They'd need to adjust to a new perspective",
-                "Do": monogatari.storage().c_n += 10,
+                "Do": () => {
+                    const c_n = monogatari.storage('s_y_g');
+                    monogatari.storage({
+                        c_n: c_n + 10,
+                    });
+                } 
             }
             
         }},
 
-        'end'
+        'jump cond',
     ]
 })
