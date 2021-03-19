@@ -2,7 +2,6 @@
 
 function check_nikos_hack () {
     // check if nikos hack was fixed
-    console.log('hack_1')
 
     if (main() != "Niko wuz here") {
         monogatari.storage({
@@ -17,6 +16,7 @@ monogatari.script({
     'cond': [
         "show scene the_center",
         'c I am still locked out of my computer',
+        check_nikos_hack,
         {'Conditional': {
             'Condition': () => {
                 return  monogatari.storage('hack_1');

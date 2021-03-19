@@ -1,3 +1,13 @@
+// initialize virus object
+
+niko_virus = new Virus();
+
+function eliminate_virus() {
+
+    // change this message to fix the hack!
+    niko_virus.change_message("Virus eliminated")
+}
+
 function main () {
     /*
     Welcome to your first hack!
@@ -15,5 +25,7 @@ function main () {
 
     //This is also a comment
     //BONUS: Can you print another message below the first?
-    return "Niko wuz here";
+    return niko_virus.check_message();
+
+
 }
