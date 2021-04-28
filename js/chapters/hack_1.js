@@ -17,6 +17,7 @@ monogatari.script({
     'cond': [
         "show scene the_center",
         'c I am still locked out of my computer',
+        check_nikos_hack,
         {'Conditional': {
             'Condition': () => {
                 return  monogatari.storage('hack_1');
