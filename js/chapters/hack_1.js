@@ -17,11 +17,12 @@ monogatari.script({
     'cond': [
         "show scene the_center",
         'c I am still locked out of my computer',
+        check_nikos_hack,
         {'Conditional': {
             'Condition': () => {
                 return  monogatari.storage('hack_1');
             },
-            'True': 'jump fixed',
+            'True': 'jump a_Hack4',
             'False': 'jump cond',
         }},
     ],
