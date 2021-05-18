@@ -5,7 +5,7 @@ function check_hack4_string_hack () {
 
     if (hack_4_function() == "test") {
         monogatari.storage({
-            check_hack4_string: true,
+            hack_4: true,
         });
     }
 

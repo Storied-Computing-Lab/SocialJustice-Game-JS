@@ -5,7 +5,7 @@
  function hack_4_function(){
     // uncomment the line below if you design your hack 4 to need to keep track of how many times the function is called
     //funcCount++
-    return "test";
+    return "tet";
  }
 
 
