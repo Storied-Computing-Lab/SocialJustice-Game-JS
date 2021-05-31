@@ -102,7 +102,15 @@ monogatari.characters ({
 			"neutral": "niko_neutral_eyes_neutral.png",
 			"worried": "niko_neutral_eyes_worried.png"
 		}
-	}
+	},
+	'e': {
+		name: 'Esperansa',
+		color: '#008080',
+		directory: 'esperansa',
+		sprites: {
+			"neutral_open": "neutral_face_arms_neutral.png"
+		}
+	},
 });
 
 monogatari.script ({
@@ -111,7 +119,8 @@ monogatari.script ({
 
 	// jump to first chapter
 	'Start': [
-		"jump a_The_Center",
+		// "jump a_The_Center",
+		"jump a_The_Base",
 	]
 
 });
