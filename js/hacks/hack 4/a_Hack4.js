@@ -53,9 +53,9 @@ monogatari.script ({
         "centered for different variations of what you just learned checkout hack 1 - 3 script files. ",
          // continue your Hack 4 script
         //In this hack you will design a coding problem that needs to be fixed in the hack_4_function file
-        // In order to check that your players completed the hack correctly either use check_hack_4 calls.js or check_hack_4_string.js with the code below
-        // if you want to use check_hack_4 calls.js replace string with calls below, otherwise uncomment the code below to check the hack4 when ready
-        'jump calls',
+        // In order to check that your players completed the hack correctly use check_hack_4.js
+        //once you are ready to check your function use the below line
+        'jump check',
 
     ]
 })

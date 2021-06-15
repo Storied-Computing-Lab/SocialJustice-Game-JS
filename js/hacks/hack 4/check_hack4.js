@@ -1,9 +1,10 @@
 //import { hack_4_function } from "../hacks/hack 4/hack_4_function.js;
-// This code checks your Hack 4 if your outputting a certain string
+// This code checks your Hack 4 Function
 function check_hack4_string_hack () {
     console.log('hack_4')
-// change the below line to check what you want your function to output or what you want your function to not output.
-    if (hack_4_function() == "test") {
+    player_answer = hack_4_function()
+    correct_answer ="enter correct answer"
+    if ("enter your conditional statement") {
         monogatari.storage({
             hack_4: true,
         });
@@ -12,7 +13,7 @@ function check_hack4_string_hack () {
     return
 }
 monogatari.script({
-    'string': [
+    'check': [
         "show scene the_center",
         'c need to complete hack4 still',
         check_hack4_string_hack,
