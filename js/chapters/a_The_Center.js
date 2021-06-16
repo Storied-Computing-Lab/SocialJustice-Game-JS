@@ -14,6 +14,7 @@ monogatari.script ({
         // niko and clara first scene
 
         "show scene the_center",
+        'jump check',
         "You turn from the window to see your cousin Niko, dressed like a White kid.",
         "Again.",
         "A little more formal, a little less Chamoru. His style draws attention away from his olive skin and stout islander features.",
@@ -47,11 +48,11 @@ monogatari.script ({
         // *need to implement floating text to indicate stat increase
 
         // fix choice storage variables
-        
+
 
         {"Choice": {
             "Text": "n I guess. I'm just worried about how you'd fit in with the guys",
-            
+
             "Flexible": {
                 "Text": "I'm pretty flexible",
                 "Do": () => {
@@ -60,7 +61,7 @@ monogatari.script ({
                         s_y_g: s_y_g + 10,
                     });
 
-                } 
+                }
 
             },
 
@@ -71,9 +72,9 @@ monogatari.script ({
                     monogatari.storage({
                         c_n: c_n + 10,
                     });
-                } 
+                }
             }
-            
+
         }},
 
         'jump cond',
