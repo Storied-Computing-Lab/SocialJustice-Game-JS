@@ -1,13 +1,11 @@
+// import {main_hack_3} from '../hacks/check_questions_hack.js'
 
 function check_hack3 () {
     // check if nikos hack was fixed
-    console.log('hack_3')
 
-    if (main() != "Niko wuz here") {
-        monogatari.storage({
-            hack_1: true,
-        });
-    }
+    console.log('hack_3')
+    console.log(main())
+    monogatari.storage({hack_3: main_hack_3()});
     
     return
 }
@@ -33,7 +31,7 @@ monogatari.script ({
         "show scene the_center",
         "show character c neutral_open at left with fadeIn",
 
-        "show niko_neutral_eyes_slight_smile at right with fadeIn",
+        "show character n neutral at right with fadeIn",
         "c Niko, I need your help! The navy are trying to poison our soil.",
         "n Uh oh, but how would I help?",
         "c If everyone comes up with at least 5 questions, we can stall them for a while",
