@@ -1,27 +1,31 @@
 monogatari.script ({
     'a_Hack4': [
         // Hack4 Skeleton code
+        // Educational and Industrial Priviledge - specially how social and economic status impacts your education and career for the rest of your life
         "clear",
-        "centered Welcome to Hack 4!",
-        "centered Go into the source code file game/chapters/a_Hack4.js to edit the script",
-        "centered Can you figure out what makes this text centered, type your own code below that is centered",
+        "centered Welcome to the game of life! Where nothing is fair and you just get what you get sucks huh",
+        "centered You are playing as Clara a POC woman who is struggling to find her footing the tech industry as a bright and young student",
+        "centered She is from a lower social economic class and struggles to find the nessecary connections needed in order to land her first internship",
+        "centered Her college is not very prestigous and although she is extremely capable, job searching is not her strong suit",
+        "centered You are at an internship fair right now",
+
         // type your own centered code here
-        "c Can you figure out in the code how to day something from Clara's perspective?",
+        "c Hi!!!! I love the work that you do at your company, may I ask if you are looking to hire a summer intern?",
+        "n Yes we are! May I ask what grade you are in and what school you go to?",
         // type your own code to say something from Clara's perspective
        "show scene the_center",
-       "centered can you figure out how we got this image as a background?",
-       "clear",
-       "centered can you show the background image again?",
+       "c Yes! I am a rising junior and I go to guam university ",
+       "n Oh sorry I just checked and we are all out of summer internship opportunities ",
        // type your own code to get a background image to show up.
-        "show character c neutral_open at left with fadeIn",
-        "show character n slight_smile at right with fadeIn",
-        "c Notice how we know have the characters of Clara and Niko appear on the screen",
+        "centered You then see a snobby ivy league kid walk up and leave with a million pamphlets and a long chat",
+        "centered You wonder what could have went wrong",
+        "c OMG I cannot believe he just blatantly turned me away due to the college that I went to, he didnt even ask me about my passions or projects?",
+        "c Im kind of angry should I...",
         "hide character c",
         "hide character n",
-        "centered Can you now figure out how to show Clara and Niko's charecters again?",
         // Type your own code to get Niko and Clara's charecters back on the screen
         {"Choice": {
-                    "Text": "Can you figure out how we created this choice menu?",
+                    "Text": "What should Clara do?",
 
                     "Flexible": {
                         "Text": "This option is connected to stand your ground points",
@@ -46,11 +50,10 @@ monogatari.script ({
                     }
 
                 }},
-        "centered Now create your own choice menu",
+        "centered WRONG CHOICE you decide to stand your ground and challenge norms",
         // Type your own code to create your own choice menu
 
-        "centered Congratulations on finishing this mini lesson! Now its time to use the tools you learned to create your Hack 4 script",
-        "centered for different variations of what you just learned checkout hack 1 - 3 script files. ",
+        "centered Clara goes home to research why this experience happened, and during her research she discovers a shocking correlation",
          // continue your Hack 4 script
         //In this hack you will design a coding problem that needs to be fixed in the hack_4_function file
         // In order to check that your players completed the hack correctly use check_hack_4.js
