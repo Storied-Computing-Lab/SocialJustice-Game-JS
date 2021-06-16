@@ -22,7 +22,7 @@ monogatari.script({
                 return  monogatari.storage('hack_4');
             },
             'True': 'jump fixed',
-            'False': 'jump checj',
+            'False': 'jump check',
         }},
     ],
 
