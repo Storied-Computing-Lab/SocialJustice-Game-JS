@@ -22,7 +22,7 @@ monogatari.script({
             'Condition': () => {
                 return  monogatari.storage('hack_1');
             },
-            'True': 'jump fixed',
+            'True': 'jump a_Hack4',
             'False': 'jump cond',
         }},
     ],
