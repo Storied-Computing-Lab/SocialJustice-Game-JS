@@ -1,13 +1,13 @@
-// import {main_hack_3} from '../hacks/check_questions_hack.js'
+// import main_hack_3 from '../hacks/check_questions_hack.js';
 
 function check_hack3 () {
     // check if nikos hack was fixed
 
-    console.log('hack_3')
-    console.log(main())
-    monogatari.storage({hack_3: main_hack_3()});
+    console.log('hack_3');
+    var hack_3_result = hack3_main();
+    monogatari.storage({hack_3: hack_3_result});
     
-    return
+    return "hello";
 }
 
 monogatari.script ({
