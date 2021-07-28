@@ -5,9 +5,16 @@ function check_hack3 () {
 
     console.log('hack_3');
     var hack_3_result = hack3_main();
-    monogatari.storage({hack_3: hack_3_result});
+    console.log(hack_3_result);
+    if(hack_3_result >= 5) {
+        monogatari.storage({hack_3: true});
+    } else {
+        monogatari.storage({hack_3: false});
+    }
+
+
     
-    return "hello";
+    return
 }
 
 monogatari.script ({
@@ -55,12 +62,7 @@ monogatari.script({
         check_hack3,
         {'Conditional': {
             'Condition': () => {
-                var questions = monogatari.storage('hack_3');
-                if(questions >= 5) {
-                    return True;
-                } else {
-                    return False;
-                }
+                return monogatari.storage('hack_3');                
             },
             'True': 'jump fixed_hack3',
             'False': 'jump cond_hack3' 
@@ -68,8 +70,8 @@ monogatari.script({
     ],
 
     // 'not_fixed': [
+        //     'jump cond',
     //     'c I am still locked out of my computer',
-    //     'jump cond',
     // ],
 
     'fixed_hack3': [
