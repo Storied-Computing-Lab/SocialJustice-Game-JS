@@ -1,13 +1,12 @@
 // import main_hack_3 from '../hacks/check_questions_hack.js';
 
 function check_hack3 () {
-    // check if nikos hack was fixed
+    // check if hack_3 was fixed
 
     console.log('hack_3');
     var hack_3_result = hack3_main();
-    monogatari.storage({hack_3: hack_3_result});
-    
-    return "hello";
+    monogatari.storage({number_of_questions: hack_3_result,});
+    return;
 }
 
 monogatari.script ({
@@ -43,8 +42,8 @@ monogatari.script ({
         "n Exactly! Look for hack_add_questions.py for more instructions!",
 
         "jump cond_hack3"
-        
-     
+
+
     ]
 })
 
@@ -55,16 +54,16 @@ monogatari.script({
         check_hack3,
         {'Conditional': {
             'Condition': () => {
-                var questions = monogatari.storage('hack_3');
-                if(questions >= 5) {
-                    return True;
+                var number_of_questions = monogatari.storage('number_of_questions');
+                if(number_of_questions >= 5) {
+                    return true;
                 } else {
-                    return False;
+                    return false;
                 }
             },
             'True': 'jump fixed_hack3',
-            'False': 'jump cond_hack3' 
-        }},        
+            'False': 'jump cond_hack3'
+        }},
     ],
 
     // 'not_fixed': [
@@ -75,7 +74,7 @@ monogatari.script({
     'fixed_hack3': [
         "hide clara_neutral_eyes_open",
         "hide niko_neutral_eyes_slight_smile",
-        
+
         "scene front_gate with dissolve",
         "e Good job Clara! That should stall them for a long time!",
 
@@ -90,4 +89,3 @@ monogatari.script({
 
 
 })
-
