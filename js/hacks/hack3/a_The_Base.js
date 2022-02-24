@@ -1,7 +1,7 @@
-// import main_hack_3 from '../hacks/check_questions_hack.js';
+// import hack3_main from '../hacks/hack3/hack_add_questions.js';
 
 function check_hack3 () {
-    // check if nikos hack was fixed
+    // check if hack_add_questions has enough questions
 
     console.log('hack_3');
     var hack_3_result = hack3_main();
@@ -44,10 +44,9 @@ monogatari.script ({
         "c If everyone comes up with at least 5 questions, we can stall them for a while",
         "n I see, I have an idea for what we can do.",
 
-        "c Let me get my notebook for this!",
         "n We can use something called a dictionary which allows us to store key, value pairs",
         "c So we could store the name and the question?",
-        "n Exactly! Look for hack_add_questions.py for more instructions!",
+        "n Exactly! Look for hack_add_questions.js for more instructions!",
 
         "jump cond_hack3"
         
