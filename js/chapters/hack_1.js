@@ -22,7 +22,7 @@ monogatari.script({
             'Condition': () => {
                 return  monogatari.storage('hack_1');
             },
-            'True': 'jump fixed',
+            'True': 'jump fixed_hack_1',
             'False': 'jump cond',
         }},
     ],
@@ -32,8 +32,9 @@ monogatari.script({
     //     'jump cond',
     // ],
 
-    'fixed': [
-        'c You got in your computer!'
+    'fixed_hack_1': [
+        'c You got in your computer!',
+				'jump hack_2_chapter',
     ],
 
 
