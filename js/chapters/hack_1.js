@@ -16,6 +16,12 @@ monogatari.script({
     'cond': [
         "show scene the_center",
         'c I am still locked out of my computer',
+        {"Choice": {
+            'Player': {
+                "Text": "Hint!",
+                "Do": "Exit the game and check the source code!",
+            }
+        }},
         check_nikos_hack,
         {'Conditional': {
             'Condition': () => {
@@ -25,7 +31,6 @@ monogatari.script({
             'False': 'jump cond',
         }},
     ],
-
     // 'not_fixed': [
     //     'c I am still locked out of my computer',
     //     'jump cond',
