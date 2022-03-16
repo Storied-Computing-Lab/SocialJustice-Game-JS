@@ -1,4 +1,3 @@
-// import { main } from "../hacks/niko_wuz_here.js";
 
 function check_poster_hack () {
 	// check if nikos hack was fixed
@@ -11,7 +10,6 @@ function check_poster_hack () {
 			});
 	}
 	
-	return
 }
 
 monogatari.script({

@@ -29,7 +29,7 @@ function eliminateVirus() {
     return "Virus has been eliminated";
 }
 
-//Here's a challenge!
+// Here's a challenge!
 function nameYourFunction(message) {
     /*
     Functions can also take arguments which can be numbers, strings, etc. In this case
@@ -40,6 +40,4 @@ function nameYourFunction(message) {
     How to use: Figure out how to use the argument inside the function and calling it 
     is very similiar to the manner explained in the last function.
     */ 
-
-    return ;
 }

@@ -10,7 +10,6 @@ function check_nikos_hack () {
         });
     }
     
-    return
 }
 
 monogatari.script({

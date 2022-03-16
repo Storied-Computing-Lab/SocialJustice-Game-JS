@@ -32,15 +32,4 @@ console.log("Oh now I'm printing 2 posters. I wonder where I can find the printe
 function print100Posters() {
 	//TODO: Help Clara print out 100 posters. 
 	//hint: the comments above should be useful!
-	return;
 }
-
-
-
-// Do not Edit this
-function printPosterOnce() {
-	console.log('Poster');
-	posterPrintCount++;
-}
-
-let posterPrintCount = 0;
