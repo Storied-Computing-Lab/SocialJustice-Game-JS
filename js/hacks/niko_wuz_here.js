@@ -14,7 +14,7 @@ function main () {
 
     //This is also a comment
     //BONUS: Can you print another message below the first?
-    return "Niko was here";
+    return "Niko wuz here";
 }
 
 

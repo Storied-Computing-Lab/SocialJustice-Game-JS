@@ -7,7 +7,7 @@
 	Feel free to play around with the code below, by changing the values and limits on i, or the message within console.log(). 
 	
 	*/
-	let bound = 7;
+	let bound = 5;
 	function hello_for_loop() {
 		for (let i = 0; i < bound; i++) {
 			console.log("Hello");
@@ -20,7 +20,8 @@
 	When writing your own for loop, don't forget to initialize the counter variable with "let" or "var"!
 */
 
-/* Hint 1: play around with these functions in your console! Copy the functions or just call printPosterOnce().
+/* Change call_once and call_twice to match the number of posters printed in each example.
+   Hint 1: play around with these functions in your console! Copy the functions or just call printPosterOnce() in console.
    Hint 2: Where can you find the printer's source code? */
 
 /* Example 1. 
@@ -29,7 +30,7 @@ function once() {
 }
 once();
 */
-let call_once = 1;
+let call_once = 0;
 
 /* Example 2.
 function twice() {
@@ -38,7 +39,7 @@ function twice() {
 }
 twice();
 */
-let call_twice = 2; 
+let call_twice = 0; 
 
 
 
