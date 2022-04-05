@@ -102,6 +102,33 @@ monogatari.characters ({
 			"neutral": "niko_neutral_eyes_neutral.png",
 			"worried": "niko_neutral_eyes_worried.png"
 		}
+	},
+
+	'e' : {
+		name: 'Esperansa',
+		color: '#008080',
+		directory: 'esperansa',
+		sprites: {
+			"angry_crossed": "angry_face_arms_crossed.png",
+			"closed_neutral":"closed_neutral_arms_neutral.png",
+			"closed_pursed_crossed": "closed_neutral_arms_neutral.png",
+			"closed_pursed_neutral": "closed_pursed_face_arms_neutral.png",
+			"neutral_crossed":"face_neutral_arms_crossed.png",
+			"fierce_crossed":"fierce_face_arms_crossed.png",
+			"fierce_neutral": "fierce_face_arms_neutral.png",
+			"neutral_neutral":"neutral_face_arms_neutral.png"
+		}
+	},
+
+	't' : {
+		name: 'Tita',
+		color: '#008080',
+		directory: 'tita',
+		sprites: {
+			"concerned": "tita_concerned.png",
+			"neutral":"tita_neutral.png",
+			"smiling": "tita_smiling.png",
+		}
 	}
 });
 
