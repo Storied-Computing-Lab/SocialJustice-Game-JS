@@ -6,8 +6,14 @@ function check_hack3 () {
     console.log('hack_3');
     var hack_3_result = hack3_main();
     console.log(hack_3_result);
-    if(hack_3_result >= 5) {
-        monogatari.storage({hack_3: true});
+    const hack_3_resultkeys = Object.keys(hack_3_result);
+    if(Object.keys(hack_3_result).length >= 5) {
+        monogatari.storage({hack_3: true,
+            q1: hack_3_result[hack_3_resultkeys[0]],
+            q2: hack_3_result[hack_3_resultkeys[1]],
+            q3: hack_3_result[hack_3_resultkeys[2]],
+            q4: hack_3_result[hack_3_resultkeys[3]],
+            q5: hack_3_result[hack_3_resultkeys[4]]});
     } else {
         monogatari.storage({hack_3: false});
     }
@@ -19,7 +25,8 @@ function check_hack3 () {
 
 monogatari.script ({
     'a_The_Base': [
-        // intro
+        // intro 
+        "show scene the_frontgate",
         "e Clara, we have a problem!",
         "c Oh no, what's wrong Esperansa?",
         "e The navy is trying to poison the soil.",
@@ -35,9 +42,8 @@ monogatari.script ({
         "c Hmm, if everyone were to get at least five questions from different people, would that be enough?",
         "e Yes, I think it would be!",
 
-        "show scene the_center",
+        "show scene the_center with fadeIn",
         "show character c neutral_open at left with fadeIn",
-
         "show character n neutral at right with fadeIn",
         "c Niko, I need your help! The navy are trying to poison our soil.",
         "n Uh oh, but how would I help?",
@@ -68,27 +74,21 @@ monogatari.script({
         }},        
     ],
 
-    // 'not_fixed': [
-        //     'jump cond',
-    //     'c I am still locked out of my computer',
-    // ],
-
     'fixed_hack3': [
-        "hide clara_neutral_eyes_open",
-        "hide niko_neutral_eyes_slight_smile",
-        
-        "scene front_gate with dissolve",
+        "hide character c neutral_open",
+        "hide character n neutral_open",
+        "show scene the_frontgate",
         "e Good job Clara! That should stall them for a long time!",
+        'jump ac_The_Meeting',
+        "end",
+    ],
 
-        // call ac_The_Meeting
-
+    'ac_Post_Meeting': [
         "We did it! We used our voices!",
         "We collectively delayed the military plans!",
         "How did feel?",
         "What did you learn?",
         "How will you take further action in your community?",
-    ],
-
-
+    ]
 })
 

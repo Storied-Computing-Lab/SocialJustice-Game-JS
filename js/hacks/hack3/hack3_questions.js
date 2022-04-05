@@ -24,7 +24,7 @@ roman_numerals = {
     "I" : 1,
     "II" : 2,
     "III" : 3,
-    "IV : 4,
+    "IV" : 4,
     "V" : 5,
 }
 
@@ -39,9 +39,7 @@ function hack3_main(){
     var questions = {
         //replace this line and add your own questions!
     };
-
-
-    return Object.keys(questions).length; //Leave this code as it is.
+    return questions; //Leave this code as it is.
 }
 
 

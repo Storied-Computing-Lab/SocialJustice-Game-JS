@@ -69,7 +69,8 @@ monogatari.assets ('images', {
 
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
-	"the_center": "tinian-japaneseGate.png"
+	"the_center": "tinian-japaneseGate.png",
+	"the_frontgate":"front_gate.png"
 });
 
 
