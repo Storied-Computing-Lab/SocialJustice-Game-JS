@@ -1,10 +1,11 @@
 // import { main } from "../hacks/niko_wuz_here.js";
 
-function check_nikos_hack () {
+function check_nikos_hack() {
     // check if nikos hack was fixed
-    console.log('hack_1')
 
+    playerOutput = main()
     if (main() != "Niko wuz here") {
+        console.log(playerOutput)
         monogatari.storage({
             hack_1: true,
         });
@@ -38,7 +39,8 @@ monogatari.script({
     // ],
 
     'fixed': [
-        'c You got in your computer!'
+        'c You got in your computer!',
+        'jump hack1_storyAfter',
     ],
 
 

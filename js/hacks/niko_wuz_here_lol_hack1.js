@@ -4,15 +4,13 @@ function main () {
     All you have to do is this:
     Change "Niko wuz here" to a new message & view your modification in the console
 
-    All this text is a comment. Computers do not read between the """ """
+    All this text is a comment.
+    In JavaScript computers do not read '//' which is used to comment a single line.
+    To comment out multiple lines, use /*.
     Press command + s to save changes here.
-    Press shift + o inside the game to view the console in the game anytime.
+    Go to Console in Developer Tools to see your output
     */
-   
-    // * figure out how to grab output in js
-    // console.log("Niko wuz here");
 
-    //This is also a comment
     //BONUS: Can you print another message below the first?
     return "Niko wuz here";
 }
