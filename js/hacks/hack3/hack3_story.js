@@ -1,30 +1,5 @@
-// import hack3_main from '../hacks/hack3/hack_add_questions.js';
-
-function check_hack3 () {
-    // check if hack_add_questions has enough questions
-
-    console.log('hack_3');
-    var hack_3_result = hack3_main();
-    console.log(hack_3_result);
-    const hack_3_resultkeys = Object.keys(hack_3_result);
-    if(Object.keys(hack_3_result).length >= 5) {
-        monogatari.storage({hack_3: true,
-            q1: hack_3_result[hack_3_resultkeys[0]],
-            q2: hack_3_result[hack_3_resultkeys[1]],
-            q3: hack_3_result[hack_3_resultkeys[2]],
-            q4: hack_3_result[hack_3_resultkeys[3]],
-            q5: hack_3_result[hack_3_resultkeys[4]]});
-    } else {
-        monogatari.storage({hack_3: false});
-    }
-
-
-    
-    return
-}
-
 monogatari.script ({
-    'a_The_Base': [
+    'hack3_storyBefore': [
         // intro 
         "show scene the_frontgate",
         "e Clara, we have a problem!",
@@ -55,40 +30,34 @@ monogatari.script ({
         "n Exactly! Look for hack_add_questions.js for more instructions!",
 
         "jump cond_hack3"
+    ], 
+
+
+    'hack3_storyAfter': [
+        "At the meeting, each activist reads out loud their question.",
+        "We believe this will cause a media stir, so the Navy will have to answer ALL our questions.",
+        "We hope to gather over 50,000 more questions, eventually, to  stall their plans even futher.",
+        "But for now, let's show them what we're made of.",
+    
+        "In no particular order, the activists begin shouting their questions for all to hear.",
+        "You notice Niko and Esperansa added additional questions!",
         
-     
-    ]
-})
+        "e How do you realistically and specifically plan to 'move the fish' ?!",
+        "n Can we see the military expansion plans in their entirety, as required by law?",
 
-
-monogatari.script({
-    'cond_hack3': [
-        'c I need at least 5 questions I currently have less than 5! That\'s not enough!',
-        check_hack3,
-        {'Conditional': {
-            'Condition': () => {
-                return monogatari.storage('hack_3');                
-            },
-            'True': 'jump fixed_hack3',
-            'False': 'jump cond_hack3' 
-        }},        
-    ],
-
-    'fixed_hack3': [
-        "hide character c neutral_open",
-        "hide character n neutral_open",
-        "show scene the_frontgate",
-        "e Good job Clara! That should stall them for a long time!",
-        'jump ac_The_Meeting',
-        "end",
-    ],
-
-    'ac_Post_Meeting': [
+        "The following questions are the questions you generated. Check js/hacks/hack3/hack_add_questions.js to see how this was done!",
+        "{{q1}}",
+        "{{q2}}",
+        "{{q3}}",
+        "{{q4}}",
+        "{{q5}}",
         "We did it! We used our voices!",
         "We collectively delayed the military plans!",
         "How did feel?",
         "What did you learn?",
         "How will you take further action in your community?",
+        //"jump hack4_story" //Students will implement this part!
+        "end" //but it doesn't have to end here!
     ]
-})
 
+});

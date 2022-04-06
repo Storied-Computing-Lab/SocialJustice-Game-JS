@@ -121,7 +121,7 @@ monogatari.script ({
 	// jump to first chapter
 	'Start': [
 		// "jump a_The_Center",
-		"jump a_The_Base",
+		"jump hack3_storyBefore",
 	]
 
 });
