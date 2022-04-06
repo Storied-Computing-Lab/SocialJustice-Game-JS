@@ -2,6 +2,8 @@ monogatari.script ({
     'hack3_storyBefore': [
         // intro 
         "show scene the_frontgate",
+        "show character e neutral_crossed at left with fadeIn",
+        "show character c neutral_open at right with fadeIn",
         "e Clara, we have a problem!",
         "c Oh no, what's wrong Esperansa?",
         "e The navy is trying to poison the soil.",
@@ -27,7 +29,7 @@ monogatari.script ({
 
         "n We can use something called a dictionary which allows us to store key, value pairs",
         "c So we could store the name and the question?",
-        "n Exactly! Look for hack_add_questions.js for more instructions!",
+        "n Exactly! Look for hack3_questions.js for more instructions!",
 
         "jump cond_hack3"
     ], 
@@ -45,7 +47,7 @@ monogatari.script ({
         "e How do you realistically and specifically plan to 'move the fish' ?!",
         "n Can we see the military expansion plans in their entirety, as required by law?",
 
-        "The following questions are the questions you generated. Check js/hacks/hack3/hack_add_questions.js to see how this was done!",
+        "The following questions are the questions you generated. Check js/hacks/hack3/hack3_story.js to see how this was done!",
         "{{q1}}",
         "{{q2}}",
         "{{q3}}",
