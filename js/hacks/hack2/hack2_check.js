@@ -1,20 +1,30 @@
+let posters_printed = 0;
 function check_poster_hack () {
 	// check if nikos hack was fixed
 	console.log('hack_2')
 
-	print100Posters()
+	print100Posters();
+	console.log(posterPrintCount);
+	posters_printed = posterPrintCount;
+	
 	if (posterPrintCount >= 100) {
 			monogatari.storage({
 					hack_2: true,
 			});
 	}
-	
 }
+
+/*Monogatari.action ('Message').messages ({
+    'NumPosters':{
+        title: 'Number of Posters Printed',
+        body: posters_printed,
+    }
+});*/
 
 monogatari.script({
 	'hack_2': [
 		"show scene the_center",
-		'c Try to figure out how hello_for_loop() works! Once you do, modify it so it logs 7 "Hello"s!', 
+		'Try to figure out how hello_for_loop() works! Once you do, modify it so it logs 7 "Hello"s!', 
 		hello_for_loop,
 			{'Conditional': {
 					'Condition': () => {
@@ -26,9 +36,9 @@ monogatari.script({
 	],
 
 	'print_poster_once': [
-		'c Congrats, you know how a for loop works now!',
-		'c Now try to figure out what printPosterOnce() does!',
-		'c Change the values of call_once and call_twice to the number of posters printed in each example.',
+		'Congrats, you know how a for loop works now!',
+		'Now try to figure out what printPosterOnce() does!',
+		'Follow the directions in the comments and change the values of call_once and call_twice',
 		{'Conditional': {
 			'Condition': () => {
 					return  call_once == 1 && call_twice == 2;
@@ -39,9 +49,10 @@ monogatari.script({
 	],
 
 	'hundred_posters': [
-			'c Awesome, now you know what printPosterOnce() does.',
-			'c Help Clara print 100 posters! (See print100Posters().)',
+			'Awesome, now you know what printPosterOnce() does.',
+			'Help Clara print 100 posters! (See print100Posters().)',
 			check_poster_hack,
+			//'show message NumPosters',
 			{'Conditional': {
 					'Condition': () => {
 							return  monogatari.storage('hack_2');

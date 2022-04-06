@@ -38,7 +38,8 @@ monogatari.script({
 
     'fixed_hack_1': [
         'c You got in your computer!',
-				'jump hack_2_chapter',
+				//'jump hack_2_chapter',
+                'jump hack2_storyBefore',
     ],
 
 

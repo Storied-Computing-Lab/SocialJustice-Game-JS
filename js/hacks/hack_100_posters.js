@@ -1,5 +1,5 @@
 /* 
-	Hello & Welcome to your second hack! 
+	Hello & Welcome to Hack 2! 
 	Here you'll learn how to print as many posters as you need, with some new coding tools that can help. 
 	See the example below to learn more...
 
@@ -20,28 +20,34 @@
 	When writing your own for loop, don't forget to initialize the counter variable with "let" or "var"!
 */
 
-/* Now you should try to understand what printPosterOnce() does. 
-   Hint 1: play around with printPosterOnce() in your console! Try calling it once and then multiple times. 
-   Hint 2: Where can you find the printer's source code? 
-   
-   To check your understanding, change the values of call_once and call_twice below as appropriate:
-   */
+/* Change call_once and call_twice to match the number of posters printed in each example.
+   Hint 1: play around with these functions in your console! Copy the functions or just call printPosterOnce() in console.
+   Hint 2: Where can you find the printer's source code? */
 
-// How many posters are printed if you call printPosterOnce() just one time?
+/* Example 1. 
+function once() {
+	printPosterOnce();
+}
+once();
+*/
 let call_once = 1;
 
-// How many posters are printed if you call printPosterOnce() two times?
+/* Example 2.
+function twice() {
+	printPosterOnce();
+	printPosterOnce();
+}
+twice();
+*/
 let call_twice = 2; 
 
 
 
 // Do not comment this part out! This is your hack 2 exercise :) 
 function print100Posters() {
-	//TODO: 
-	//Help Clara fix the bug in the printer so she can print out 100 posters! 
-	//Currently, the printer is only printing two posters.
-
+	//TODO: Help Clara print out 100 posters. 
 	//hint: the comments above should be useful!
-	printPosterOnce();
-	printPosterOnce();
+	for (let i = 0; i < 100; i++) {
+		printPosterOnce();
+	}
 }
