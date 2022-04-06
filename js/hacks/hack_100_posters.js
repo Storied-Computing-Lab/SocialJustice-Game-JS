@@ -7,7 +7,7 @@
 	Feel free to play around with the code below, by changing the values and limits on i, or the message within console.log(). 
 	
 	*/
-	let bound = 5;
+	let bound = 7;
 	function hello_for_loop() {
 		for (let i = 0; i < bound; i++) {
 			console.log("Hello");
@@ -30,7 +30,7 @@ function once() {
 }
 once();
 */
-let call_once = 0;
+let call_once = 1;
 
 /* Example 2.
 function twice() {
@@ -39,7 +39,7 @@ function twice() {
 }
 twice();
 */
-let call_twice = 0; 
+let call_twice = 2; 
 
 
 
@@ -47,4 +47,7 @@ let call_twice = 0;
 function print100Posters() {
 	//TODO: Help Clara print out 100 posters. 
 	//hint: the comments above should be useful!
+	for (let i = 0; i < 100; i++) {
+		printPosterOnce();
+	}
 }
