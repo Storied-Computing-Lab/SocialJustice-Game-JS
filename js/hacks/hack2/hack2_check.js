@@ -57,7 +57,8 @@ monogatari.script({
 	// ],
 
 	'poster_fixed': [
-			'c You printed 100 posters!'
+			'c You printed 100 posters!',
+			'jump hack2_storyAfter',
 	],
 
 
