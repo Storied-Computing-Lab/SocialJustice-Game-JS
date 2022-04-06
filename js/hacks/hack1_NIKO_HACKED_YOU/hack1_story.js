@@ -1,3 +1,17 @@
+monogatari.action ('Message').messages ({
+    'challenging_norms': {
+        title: '+10% challenging norms!',
+        body: '+10% challenging norms!',
+    },
+});
+
+monogatari.action ('Message').messages ({
+    'stand_your_ground': {
+        title: '+10% Stand your ground!',
+        body: '+10% Stand your ground!',
+    },
+});
+
 monogatari.script ({
     'hack1_storyBefore': [
         // intro
@@ -46,36 +60,64 @@ monogatari.script ({
         // *need to implement floating text to indicate stat increase
 
         // fix choice storage variables
-
-
         {"Choice": {
             "Text": "n I guess. I'm just worried about how you'd fit in with the guys",
-            
             "Flexible": {
                 "Text": "I'm pretty flexible",
-                "Do": () => {
-                    const s_y_g = monogatari.storage('s_y_g');
-                    monogatari.storage({
-                        s_y_g: s_y_g + 10,
-                    });
-
-                } 
-
+                "onChosen": function (){
+                        const s_y_g = monogatari.storage('s_y_g');
+                        monogatari.storage({
+                            s_y_g: s_y_g + 10,
+                        });
+                    },     
+                "Do": "jump flexible",
             },
-
             "Perspective": {
                 "Text": "They'd need to adjust to a new perspective",
-                "Do": () => {
+                "onChosen": function () {
                     const c_n = monogatari.storage('s_y_g');
                     monogatari.storage({
                         c_n: c_n + 10,
                     });
-                } 
+                },
+                "Do": "jump perspective",
             }
-
         }},
-        'jump cond',
     ],
+    'flexible' : [
+        'show message stand_your_ground',
+        //$stand_s += .10
+        "n I don't know Clara. I know you're smart, but the guys...",
+        "n ....",
+        "n They just really... ACT like guys, you know?",
+        "c I said I can handle it. Trust me.",
+        "c And you've got my back, right Niko?",
+        "n --",
+        "n ----",
+        "n yeah of course Cuz",
+        "Niko's hesitation was kind of weird. So you try another angle",
+        "jump next",
+    ],
+    'perspective' : [
+        'show message challenging_norms',
+        //$norms_s += .10
+        "c Well as far as fitting in,",
+        "c I acutally think THEY would need to do work to adjust and welecome a Chamoru, female perspective!",
+        "n oh-- Do some work to adjust--? Adjust to you?",
+        "c We each have to do the work so that we all 'fit in' together.",
+        "jump next",
+    ],
+    'next' : [
+        "jump cond",
+    ],
+
+
+
+    /*
+
+    HERE IS WHERE WE JUMP AFTER HACK1 IS COMPLETED
+
+    */
     'hack1_storyAfter': [
         "show scene the_center",
 
