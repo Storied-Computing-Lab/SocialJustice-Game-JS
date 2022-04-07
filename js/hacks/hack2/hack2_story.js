@@ -117,12 +117,6 @@ monogatari.script ({
 		'show scene disaster',
 		{"Choice": {
 			"Text": "Continue Reading?",
-			
-			"Yes": {
-				"Text": "Continue Reading",
-				"Do": "jump walk",
-
-			},
 
 			"No": {
 				"Text": "Ready to move on!",

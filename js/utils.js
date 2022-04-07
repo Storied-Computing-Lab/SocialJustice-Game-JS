@@ -1,5 +1,5 @@
-let posterPrintCount = 0;
+let posterPrintCount = 1;
 function printPosterOnce() {
-	console.log('Poster');
+	console.log('Poster', posterPrintCount);
 	posterPrintCount++;
 }

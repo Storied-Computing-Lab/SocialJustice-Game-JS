@@ -1,11 +1,8 @@
 let posters_printed = 0;
 function check_poster_hack () {
-	// check if nikos hack was fixed
-	console.log('hack_2')
-
+	//console.log('hack_2')
+	posterPrintCount = 0;
 	print100Posters();
-	console.log(posterPrintCount);
-	posters_printed = posterPrintCount;
 	
 	if (posterPrintCount >= 100) {
 			monogatari.storage({
@@ -30,12 +27,12 @@ monogatari.script({
 					'Condition': () => {
 							return  bound == 7;
 					},
-					'True': 'jump print_poster_once',
+					'True': 'jump hundred_posters', //'jump print_poster_once',
 					'False': 'jump hack_2',
 			}},
 	],
 
-	'print_poster_once': [
+	/*'print_poster_once': [
 		'Congrats, you know how a for loop works now!',
 		'Now try to figure out what printPosterOnce() does!',
 		'Follow the directions in the comments and change the values of call_once and call_twice',
@@ -46,10 +43,11 @@ monogatari.script({
 			'True': 'jump hundred_posters',
 			'False': 'jump print_poster_once',
 		}},
-	],
+	],*/
 
 	'hundred_posters': [
-			'Awesome, now you know what printPosterOnce() does.',
+			//'Awesome, now you know what printPosterOnce() does.',
+			'Congrats, you know how a for loop works now!',
 			'Help Clara print 100 posters! (See print100Posters().)',
 			check_poster_hack,
 			//'show message NumPosters',
