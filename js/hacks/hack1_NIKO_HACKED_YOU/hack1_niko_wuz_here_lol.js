@@ -8,7 +8,8 @@ function main () {
     In JavaScript computers do not read '//' which is used to comment a single line.
     To comment out multiple lines, use /*.
     Press command + s to save changes here.
-    Go to Console in Developer Tools to see your output
+    Go to Console to see your output.
+    To see the Console go to View -> Developer -> JavaScript Console.
     */
 
     //BONUS: Can you print another message below the first?

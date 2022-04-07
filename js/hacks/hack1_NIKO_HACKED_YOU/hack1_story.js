@@ -12,6 +12,13 @@ monogatari.action ('Message').messages ({
     },
 });
 
+monogatari.action ('Message').messages ({
+    'reclaim_our_imagination': {
+        title: '+10% Reclaim our imagination',
+        body: '+10% Reclaim our imagination',
+    },
+});
+
 monogatari.script ({
     'hack1_storyBefore': [
         // intro
@@ -96,7 +103,7 @@ monogatari.script ({
         "n ----",
         "n yeah of course Cuz",
         "Niko's hesitation was kind of weird. So you try another angle",
-        "jump next",
+        "jump hack1_secondChoice",
     ],
     'perspective' : [
         'show message challenging_norms',
@@ -105,13 +112,136 @@ monogatari.script ({
         "c I acutally think THEY would need to do work to adjust and welecome a Chamoru, female perspective!",
         "n oh-- Do some work to adjust--? Adjust to you?",
         "c We each have to do the work so that we all 'fit in' together.",
-        "jump next",
+        "jump hack1_secondChoice",
     ],
     'next' : [
         "jump cond",
     ],
 
+    /*
 
+    HERE IS WHERE WE JUMP FOR SECOND CHOICE
+
+    */
+    'hack1_secondChoice': [
+        "c and plus, right now YOU're the only Chamoru in the group!",
+        "n So?",
+
+        {"Choice": {
+            "Text": "n So?",
+            "Two_In_Group": {
+                "Text": "With me that would make TWO Chamorus in the group!",
+                "onChosen": function (){
+                    const s_y_g = monogatari.storage('s_y_g');
+                    monogatari.storage({
+                        s_y_g: s_y_g + 10,
+                    });
+                },
+                    "Do": "jump two",
+            },
+            "New_Group": {
+                "Text": "Maybe we should form a brand new hacker group of Chamorus!",
+                "onChosen": function () {
+                    const c_n = monogatari.storage('s_y_g');
+                    monogatari.storage({
+                        c_n: c_n + 10,
+                    });
+                },
+                    "Do": "jump new_group",
+            }
+         }},
+    ],
+    'two': [
+        'show message stand_your_ground',
+        "c Soooo! Niko with me that would make TWO Chamorus in the group!",
+        "n Hm. Maybe you're right that would improve things...",
+        "n They do sometimes look at me weird whenever I question their jokes about poor Chamoru communities in Dededo",
+        "jump hack1_LastChoice",
+    ],
+    'new_group': [
+        'show message reclaim_our_imagination',
+        "c Maybe you and I could form a brand new Chamoru hacker group Niko",
+        "c It could focus on Chamoru specific issues. What do you think?",
+        "n That actually might be cool",
+        "jump hack1_LastChoice",
+    ],
+
+    /*
+
+    HERE IS WHERE WE JUMP FOR LAST CHOICE
+
+    */
+    'hack1_LastChoice': [
+        "n Hm. Yeah. But I don't think the hacker boys are 'racist'...",
+
+        {"Choice": {
+            "Text": "n Hm. Yeah. But I don't think the hacker boys are 'racist'...",
+            "Two_In_Group": {
+                "Text": "Why do you say they're not racist?",
+                "onChosen": function (){
+                    const s_y_g = monogatari.storage('s_y_g');
+                    monogatari.storage({
+                        s_y_g: s_y_g + 10,
+                    });
+                },
+                "Do": "jump critique",
+            },
+            "New_Group": {
+                "Text": "Do they encourage your Chamoru side?",
+                "onChosen": function () {
+                    const c_n = monogatari.storage('s_y_g');
+                    monogatari.storage({
+                        c_n: c_n + 10,
+                    });
+                },
+                "Do": "encourage",
+            }
+        }},
+    ],
+    'critique': [
+        //New ability?
+        "c Why do you say they aren't racist?",
+        "n They don't say racist things or discriminate against me for being Chamoru",
+        "n I mean, it does piss me off when they say shit about the poorer parts of town.",
+        "n ..and those parts of town have a lot more Chamorus...",
+        "n but they never say anything to me.",
+        "jump prologue",
+    ],
+    'encourage': [
+        'show message reclaim_our_imagination',
+        "c Do you think they encourage your Chamoru side?",
+        "c Or do they only like your ideas that make them comfortable?",
+        "Niko shifts his weight from left to right.",
+        "So you try to open him up one more time",
+        "c Do you experience any other type of discrimination?",
+        "jump prologue",
+    ],
+    //Where to include the if else statement from the RenPy version?
+    //Jump from critique & encourage doesn't flow well if else text needs to be included or rewritten
+
+    /*
+
+    HERE IS PROLOGUE TO HACK
+
+    */
+    'prologue':[
+        "c Hey Niko",
+        "n Hey Clara",
+        "n I've been thinking about what you said, and I looked at your last hacker application. They should have let you in",
+        "c Really?!? Why'd they reject me",
+        "c Maybe discrimination is harder to see than we thought?",
+        "A moment of quiet",
+        "c What should we do?",
+        "n I've got a new hacker challenge for you to try.",
+        "In this game you will have to hack your way to justice.",
+        "Try to fix niko's hack to continue on in the game.",
+        "You'll need those skills later",
+        "c Well I'm glad you said something! I can do it today!",
+        "n Well guess what? You're locked out of your computer!",
+        "c what???",
+        "c Oh my gosh. *Only you* would think of a hack like this Niko ya jerk!",
+        'jump next',
+    ],
 
     /*
 
