@@ -15,7 +15,7 @@ function check_nikos_hack() {
 }
 
 monogatari.script({
-    'cond': [
+    'hack1_exercise': [
         "show scene the_center",
         'c I am still locked out of my computer',
         {"Choice": {
@@ -29,16 +29,12 @@ monogatari.script({
             'Condition': () => {
                 return  monogatari.storage('hack_1');
             },
-            'True': 'jump fixed',
-            'False': 'jump cond',
+            'True': 'jump hack1_solved',
+            'False': 'jump hack1_exercise',
         }},
     ],
-    // 'not_fixed': [
-    //     'c I am still locked out of my computer',
-    //     'jump cond',
-    // ],
 
-    'fixed': [
+    'hack1_solved': [
         'c You got in your computer!',
         'jump hack1_storyAfter',
     ],

@@ -19,6 +19,14 @@ monogatari.action ('Message').messages ({
     },
 });
 
+monogatari.action ('Message').messages ({
+    'CRITIQUE_ABILITY': {
+        title: 'NEW ABILITY!',
+        body: 'CRITIQUE: offer a new perspective using critical thinking.',
+    },
+});
+
+
 monogatari.script ({
     'hack1_storyBefore': [
         // intro
@@ -72,16 +80,19 @@ monogatari.script ({
             "Flexible": {
                 "Text": "I'm pretty flexible",
                 "onChosen": function (){
+                        //Access the s_y_g variable from storage, put into a new const with the same name
                         const s_y_g = monogatari.storage('s_y_g');
+                        //Update the s_y_g variable by adding 10 and putting it back in storage
                         monogatari.storage({
                             s_y_g: s_y_g + 10, //actually do the action of +10 stand your ground
                         });
                     },
                 "onRevert": function (){
-                    monogatari.storage({
-                        s_y_g: s_y_g - 10,
-                    });
-                },
+                        const s_y_g = monogatari.storage('s_y_g');
+                        monogatari.storage({
+                            s_y_g: s_y_g - 10,
+                        });
+                    },
                 "Do": "jump flexible",
             },
             "Perspective": {
@@ -93,6 +104,7 @@ monogatari.script ({
                     });
                 },
                 "onRevert": function() {
+                    const c_n = monogatari.storage('s_y_g');
                     monogatari.storage({
                         c_n: c_n - 10,
                     });
@@ -104,11 +116,9 @@ monogatari.script ({
     'flexible' : [
         'show message stand_your_ground',
         //$stand_s += .10
-        "n I don't know Clara. I know you're smart, but the guys...",
-        "n ....",
-        "n They just really... ACT like guys, you know?",
-        "c I said I can handle it. Trust me.",
-        "c And you've got my back, right Niko?",
+        "c Well, I'm pretty flexible",
+        "n I don't know Clara. I know you're smart, but the guys...They just really... ACT like guys, you know?",
+        "c I said I can handle it. Trust me. And you've got my back, right Niko?",
         "n --",
         "n ----",
         "n yeah of course Cuz",
@@ -118,14 +128,10 @@ monogatari.script ({
     'perspective' : [
         'show message challenging_norms',
         //$norms_s += .10
-        "c Well as far as fitting in,",
-        "c I acutally think THEY would need to do work to adjust and welecome a Chamoru, female perspective!",
+        "c Well as far as fitting in, I acutally think THEY would need to do work to adjust and welcome a Chamoru, female perspective!",
         "n oh-- Do some work to adjust--? Adjust to you?",
         "c We each have to do the work so that we all 'fit in' together.",
         "jump hack1_secondChoice",
-    ],
-    'next' : [
-        "jump cond",
     ],
 
     /*
@@ -146,6 +152,9 @@ monogatari.script ({
                     monogatari.storage({
                         s_y_g: s_y_g + 10,
                     });
+                    monogatari.storage({
+                        only_Chamoru: "with me that makes two",
+                    });
                 },
                     "Do": "jump two",
             },
@@ -156,6 +165,9 @@ monogatari.script ({
                     monogatari.storage({
                         c_n: c_n + 10,
                     });
+                    monogatari.storage({
+                        only_Chamoru: "with us as Chamoru hackers",
+                    });
                 },
                     "Do": "jump new_group",
             }
@@ -164,14 +176,12 @@ monogatari.script ({
     'two': [
         'show message stand_your_ground',
         "c Soooo! Niko with me that would make TWO Chamorus in the group!",
-        "n Hm. Maybe you're right that would improve things...",
-        "n They do sometimes look at me weird whenever I question their jokes about poor Chamoru communities in Dededo",
+        "n Hm. Maybe you're right that would improve things...They do sometimes look at me weird whenever I question their jokes about poor Chamoru communities in Dededo",
         "jump hack1_LastChoice",
     ],
     'new_group': [
         'show message reclaim_our_imagination',
-        "c Maybe you and I could form a brand new Chamoru hacker group Niko",
-        "c It could focus on Chamoru specific issues. What do you think?",
+        "c Maybe you and I could form a brand new Chamoru hacker group Niko. It could focus on Chamoru specific issues. What do you think?",
         "n That actually might be cool",
         "jump hack1_LastChoice",
     ],
@@ -193,6 +203,9 @@ monogatari.script ({
                     monogatari.storage({
                         s_y_g: s_y_g + 10,
                     });
+                    monogatari.storage({
+                        are_hacker_boyz_racist: "the shit they say about poorer folks in Dededo",
+                    });
                 },
                 "Do": "jump critique",
             },
@@ -203,54 +216,111 @@ monogatari.script ({
                     monogatari.storage({
                         c_n: c_n + 10,
                     });
+                    monogatari.storage({
+                        are_hacker_boyz_racist: "experiencing discrimination",
+                    });
                 },
-                "Do": "encourage",
+                "Do": "jump encourage",
             }
         }},
     ],
     'critique': [
-        //New ability?
+        'show message CRITIQUE_ABILITY',
         "c Why do you say they aren't racist?",
         "n They don't say racist things or discriminate against me for being Chamoru",
-        "n I mean, it does piss me off when they say shit about the poorer parts of town.",
-        "n ..and those parts of town have a lot more Chamorus...",
+        "n I mean, it does piss me off when they say shit about the poorer parts of town. ..and those parts of town have a lot more Chamorus...",
         "n but they never say anything to me.",
-        "jump prologue",
+        "jump open_him_up_WITH_CONDITIONAL",
     ],
     'encourage': [
         'show message reclaim_our_imagination',
-        "c Do you think they encourage your Chamoru side?",
-        "c Or do they only like your ideas that make them comfortable?",
+        "c Do you think they encourage your Chamoru side? Or do they only encourage your ideas that make them comfortable?",
         "Niko shifts his weight from left to right.",
         "So you try to open him up one more time",
+        "jump open_him_up_WITH_CONDITIONAL",
+    ],
+    'open_him_up_WITH_CONDITIONAL': [
         "c Do you experience any other type of discrimination?",
+        {'Conditional': {
+            'Condition': function () {
+                return this.storage ('only_Chamoru') == "with me that makes two";
+            },
+            'True': 'jump with_us_two',
+            'False': 'jump hacker_group',
+        }},
+    ],
+    'with_us_two':[
+        "n Well I was thinking about having two Chamorus in the group, like you said. Would that really be enough to combat discrimination?",
+        "c We could look out for each other. What if Chamoru hackers really did a different type of hacking?",
         "jump prologue",
     ],
-    //Where to include the if else statement from the RenPy version?
-    //Jump from critique & encourage doesn't flow well if else text needs to be included or rewritten
-
+    'hacker_group':[
+        "n Well I was thinking about the Chamoru hacker group you mentioned.",
+        "n What if Chamoru hackers really did a different type of hacking?",
+        "jump prologue",
+    ],
     /*
 
     HERE IS PROLOGUE TO HACK
 
     */
     'prologue':[
-        "c Hey Niko",
+        "hide character n",
+        "hide character c",
+        "A few days go by. Clara explores a little and comes back to the Center for Chamoru Rights",
+
+        "show character n slight_smile at right with fadeIn",
+        "show character c neutral_closed at left with fadeIn",
+
         "n Hey Clara",
+        "show character c neutral_open at left with fadeIn",
+        "hide character c neutral_closed",
+
+        "c Hey Niko",
         "n I've been thinking about what you said, and I looked at your last hacker application. They should have let you in",
         "c Really?!? Why'd they reject me",
-        "c Maybe discrimination is harder to see than we thought?",
+
+        "show character n neutral at right",
+        "hide character n slight_smile",
+        "n Maybe discrimination is harder to see than we thought?",
+
         "A moment of quiet",
-        "c What should we do?",
+        "c What should we do?",  
+        
+        "hide character n",
+        "show character n slight_smile at right with fadeIn",
+        
         "n I've got a new hacker challenge for you to try.",
-        "In this game you will have to hack your way to justice.",
-        "Try to fix niko's hack to continue on in the game.",
-        "You'll need those skills later",
+
+        "hide character n",
+        "hide character c",
+        "clear",
+        "show image textbox center",
+
+        "centered In this game you will have to hack your way to justice.",
+        "centered Try to fix niko's hack to continue on in the game.",
+        "centered You'll need those skills later",
+
+        "hide image textbox",
+        "show scene the_center",
+
+        "show character c pointer_open at left with fadeIn",
+        "show character n neutral at right width fadeIn",
+
         "c Well I'm glad you said something! I can do it today!",
+
+        "show character n slight_smile at right",
+        "hide character n neutral",
+
         "n Well guess what? You're locked out of your computer!",
+
         "c what???",
+
+        "show character c pointer_closed at left",
+        "hide character c pointer_open",
+
         "c Oh my gosh. *Only you* would think of a hack like this Niko ya jerk!",
-        'jump next',
+        'jump hack1_exercise',
     ],
 
     /*
@@ -273,7 +343,7 @@ monogatari.script ({
         "c Yeah, or again, you and me, starting our own club!",
 
         "n Great work again, Clara.",
-        "n And I was thinking about what you said, about the Hacker Boyz and [hacker_boys_racist].",
+        "n And I was thinking about what you said, about the Hacker Boyz and {{are_hacker_boyz_racist}}.",
         "n You know who you should talk to about this kind of stuff?",
 
         "hide character c",

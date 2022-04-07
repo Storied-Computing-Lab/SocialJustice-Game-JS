@@ -12,7 +12,6 @@ function main () {
     To see the Console go to View -> Developer -> JavaScript Console.
     */
 
-    //BONUS: Can you print another message below the first?
     return "Niko wuz here";
 }
 
