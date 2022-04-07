@@ -1,10 +1,11 @@
 // import { main } from "../hacks/niko_wuz_here.js";
 
-function check_nikos_hack () {
+function check_nikos_hack() {
     // check if nikos hack was fixed
-    console.log('hack_1')
 
+    playerOutput = main()
     if (main() != "Niko wuz here") {
+        console.log(playerOutput)
         monogatari.storage({
             hack_1: true,
         });
@@ -14,7 +15,7 @@ function check_nikos_hack () {
 }
 
 monogatari.script({
-    'cond': [
+    'hack1_exercise': [
         "show scene the_center",
         'c I am still locked out of my computer',
         {"Choice": {
@@ -28,17 +29,14 @@ monogatari.script({
             'Condition': () => {
                 return  monogatari.storage('hack_1');
             },
-            'True': 'jump fixed',
-            'False': 'jump cond',
+            'True': 'jump hack1_solved',
+            'False': 'jump hack1_exercise',
         }},
     ],
-    // 'not_fixed': [
-    //     'c I am still locked out of my computer',
-    //     'jump cond',
-    // ],
 
-    'fixed': [
-        'c You got in your computer!'
+    'hack1_solved': [
+        'c You got in your computer!',
+        'jump hack1_storyAfter',
     ],
 
 
