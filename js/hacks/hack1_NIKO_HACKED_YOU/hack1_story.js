@@ -74,9 +74,14 @@ monogatari.script ({
                 "onChosen": function (){
                         const s_y_g = monogatari.storage('s_y_g');
                         monogatari.storage({
-                            s_y_g: s_y_g + 10,
+                            s_y_g: s_y_g + 10, //actually do the action of +10 stand your ground
                         });
-                    },     
+                    },
+                "onRevert": function (){
+                    monogatari.storage({
+                        s_y_g: s_y_g - 10,
+                    });
+                },
                 "Do": "jump flexible",
             },
             "Perspective": {
@@ -84,7 +89,12 @@ monogatari.script ({
                 "onChosen": function () {
                     const c_n = monogatari.storage('s_y_g');
                     monogatari.storage({
-                        c_n: c_n + 10,
+                        c_n: c_n + 10, //actually do the action of +10 challenge norms
+                    });
+                },
+                "onRevert": function() {
+                    monogatari.storage({
+                        c_n: c_n - 10,
                     });
                 },
                 "Do": "jump perspective",

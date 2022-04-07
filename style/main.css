@@ -221,7 +221,7 @@ input[type=range]::-ms-fill-upper {
 
 	/* Quick Menu Style */
 	[data-component="quick-menu"] {
-
+		z-index:100;
 	}
 
 	/* Quick Menu Buttons Style */
