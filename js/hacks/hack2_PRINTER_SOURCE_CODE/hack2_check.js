@@ -6,7 +6,7 @@ monogatari.storage ({
 function check_poster_hack () {
 	//console.log('hack_2')
 	posterPrintCount = 0;
-	print100Posters();
+	printer_that_prints_100_posters();
 	monogatari.storage().posters_printed = posterPrintCount;
 	
 	if (posterPrintCount >= 100) {
@@ -27,7 +27,6 @@ monogatari.action ('Message').messages ({
 
 monogatari.script({
 	'hack_2': [
-		"show scene the_center",
 		'Try to figure out how hello_for_loop() works! Once you do, modify it so it logs 7 "Hello"s!', 
 		hello_for_loop,
 			{'Conditional': {
@@ -55,7 +54,7 @@ monogatari.script({
 	'hundred_posters': [
 			//'Awesome, now you know what printPosterOnce() does.',
 			'Congrats, you know how a for loop works now!',
-			'Help Clara print 100 posters! (See print100Posters().)',
+			'Help Clara print 100 posters! (See printer_that_prints_100_posters().)',
 			check_poster_hack,
 			document.write(monogatari.storage().posters_printed),
 			'show message NumPosters',

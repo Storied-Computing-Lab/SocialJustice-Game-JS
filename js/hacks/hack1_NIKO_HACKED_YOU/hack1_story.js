@@ -375,8 +375,8 @@ monogatari.script ({
         "You're so excited about your first hack, you just want to keep nerding out with Niko.",
         "But you're still concerned with the way the Hacker Boyz exclude girls.",
 
-         "hide character c",
-         "show character c neutral_open center with fadeIn",
+        "hide character c",
+        "show character c neutral_open center with fadeIn",
         "c Maybe I should meet Esperansa. I could use someone to talk to about this.",
         'jump hack2_storyBefore',
     ]
