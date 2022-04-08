@@ -16,7 +16,7 @@ function check_poster_hack () {
 	}
 }
 //let s = monogatari.storage().posters_printed.toString();
-
+/*
 monogatari.action ('Message').messages ({
     'NumPosters':{
         title: 'Number of Posters Printed:',
@@ -24,7 +24,7 @@ monogatari.action ('Message').messages ({
         //body: monogatari.storage().posters_printed.toString(),
     },
 });
-
+*/
 monogatari.script({
 	'hack_2': [
 		'Try to figure out how hello_for_loop() works! Once you do, modify it so it logs 7 "Hello"s!', 
@@ -33,7 +33,7 @@ monogatari.script({
 					'Condition': () => {
 							return  bound == 7;
 					},
-					'True': 'jump hundred_posters', //'jump print_poster_once',
+					'True': 'jump congrats', 
 					'False': 'jump hack_2',
 			}},
 	],
@@ -50,22 +50,27 @@ monogatari.script({
 			'False': 'jump print_poster_once',
 		}},
 	],*/
+	'congrats' : [
+		'Congrats, you know how a for loop works now!',
+		'Heres the poster we need {{pchoice}}',
+		{'Conditional': {
+			'Condition': () => {
+				console.log(monogatari.storage('pchoice'));
+				return  monogatari.storage('pchoice') == "for the resistance";
+			},
+			'True': 'show image resist.png center with fadeIn',
+			'False': 'show image evacuate.png center with fadeIn',
+		}},
+		'jump hundred_posters',
+	],
 
 	'hundred_posters': [
 			//'Awesome, now you know what printPosterOnce() does.',
-			'Congrats, you know how a for loop works now!',
-			'Help Clara print 100 posters! (See printer_that_prints_100_posters().)',
 			check_poster_hack,
-			document.write(monogatari.storage().posters_printed),
-			'show message NumPosters',
-			{'Conditional': {
-				'Condition': () => {
-					console.log(monogatari.storage('pchoice'));
-					return  monogatari.storage('pchoice') == "res";
-				},
-				'True': 'show image resist.png center with fadeIn',
-				'False': 'show image evacuate.png center with fadeIn',
-			}},
+			'Help Clara print 100 posters {{pchoice}}! (See printer_that_prints_100_posters().)',
+			'The printer is printing {{posters_printed}} posters',
+			//document.write(monogatari.storage().posters_printed),
+			//'show message NumPosters',
 			{'Conditional': {
 					'Condition': () => {
 							return  monogatari.storage('hack_2');
@@ -76,7 +81,8 @@ monogatari.script({
 	],
 
 	'poster_fixed': [
-			'c You printed 100 posters!',
+			'c We did it!',
+			'c We have enough to spread the word!,',
 			'jump hack2_storyAfter',
 	],
 

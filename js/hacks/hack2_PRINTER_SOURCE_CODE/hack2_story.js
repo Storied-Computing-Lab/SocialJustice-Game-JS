@@ -165,7 +165,7 @@ monogatari.script ({
 					monogatari.storage('pchoice') = "res";
 				},*/
 				'onChosen': function () {
-					monogatari.storage().pchoice = "res";
+					monogatari.storage().pchoice = "for the resistance"; //the phrasing of this text is used elsewhere in Dialouge
 				},
 				"Do": "jump res",
 
@@ -177,7 +177,7 @@ monogatari.script ({
 					monogatari.storage('pchoice') = "eva";
 				},*/
 				'onChosen': function () {
-					monogatari.storage().pchoice = "eva";
+					monogatari.storage().pchoice = "for the evacuation"; //the phrasing of this text is used elsewhere in Dialouge
 				},
 				"Do": "jump eva",
 			},
