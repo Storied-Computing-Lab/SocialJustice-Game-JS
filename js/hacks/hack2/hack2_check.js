@@ -15,14 +15,14 @@ function check_poster_hack () {
 			});
 	}
 }
-let s = monogatari.storage().posters_printed.toString();
+//let s = monogatari.storage().posters_printed.toString();
 
 monogatari.action ('Message').messages ({
     'NumPosters':{
         title: 'Number of Posters Printed:',
-		subtitle: s,
-        body: monogatari.storage().posters_printed.toString(),
-    }
+		//subtitle: s,
+        //body: monogatari.storage().posters_printed.toString(),
+    },
 });
 
 monogatari.script({
@@ -57,6 +57,7 @@ monogatari.script({
 			'Congrats, you know how a for loop works now!',
 			'Help Clara print 100 posters! (See print100Posters().)',
 			check_poster_hack,
+			document.write(monogatari.storage().posters_printed),
 			'show message NumPosters',
 			{'Conditional': {
 				'Condition': () => {
