@@ -1,8 +1,13 @@
-let posters_printed = 0;
+
+monogatari.storage ({
+	posters_printed: 0
+});
+
 function check_poster_hack () {
 	//console.log('hack_2')
 	posterPrintCount = 0;
 	print100Posters();
+	monogatari.storage().posters_printed = posterPrintCount;
 	
 	if (posterPrintCount >= 100) {
 			monogatari.storage({
@@ -10,13 +15,15 @@ function check_poster_hack () {
 			});
 	}
 }
+let s = monogatari.storage().posters_printed.toString();
 
-/*Monogatari.action ('Message').messages ({
+monogatari.action ('Message').messages ({
     'NumPosters':{
-        title: 'Number of Posters Printed',
-        body: posters_printed,
+        title: 'Number of Posters Printed:',
+		subtitle: s,
+        body: monogatari.storage().posters_printed.toString(),
     }
-});*/
+});
 
 monogatari.script({
 	'hack_2': [
@@ -50,7 +57,7 @@ monogatari.script({
 			'Congrats, you know how a for loop works now!',
 			'Help Clara print 100 posters! (See print100Posters().)',
 			check_poster_hack,
-			//'show message NumPosters',
+			'show message NumPosters',
 			{'Conditional': {
 				'Condition': () => {
 					console.log(monogatari.storage('pchoice'));
