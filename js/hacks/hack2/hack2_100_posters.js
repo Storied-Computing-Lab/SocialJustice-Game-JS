@@ -7,7 +7,7 @@
 	Feel free to play around with the code below, by changing the values and limits on i, or the message within console.log(). 
 	
 	*/
-	let bound = 7;
+	let bound = 5;
 	function hello_for_loop() {
 		for (let i = 0; i < bound; i++) {
 			console.log("Hello");
@@ -29,10 +29,7 @@ function print100Posters() {
 	*/
 
 	//hint: the comments above should be useful!
-	//printPosterOnce();
-	//printPosterOnce();
-	for (let i = 0; i < 100; i++) {
-		printPosterOnce();
-	}
+	printPosterOnce();
+	printPosterOnce();
 	// A challenge: If you haven't already, can you make the function print exactly 100 posters?
 }

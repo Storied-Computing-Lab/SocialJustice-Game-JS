@@ -76,11 +76,6 @@ monogatari.script({
 			}},
 	],
 
-	// 'not_fixed': [
-	//     'c I am still locked out of my computer',
-	//     'jump cond',
-	// ],
-
 	'poster_fixed': [
 			'c You printed 100 posters!',
 			'jump hack2_storyAfter',
