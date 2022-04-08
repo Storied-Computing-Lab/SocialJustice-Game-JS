@@ -52,6 +52,14 @@ monogatari.script({
 			check_poster_hack,
 			//'show message NumPosters',
 			{'Conditional': {
+				'Condition': () => {
+					console.log(monogatari.storage('pchoice'));
+					return  monogatari.storage('pchoice') == "res";
+				},
+				'True': 'show image resist.png center with fadeIn',
+				'False': 'show image evacuate.png center with fadeIn',
+			}},
+			{'Conditional': {
 					'Condition': () => {
 							return  monogatari.storage('hack_2');
 					},

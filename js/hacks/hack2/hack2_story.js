@@ -1,3 +1,7 @@
+monogatari.storage ({
+	pchoice: ""
+});
+
 monogatari.script ({
 	'hack2_storyBefore': [
 		"clear",
@@ -23,15 +27,15 @@ monogatari.script ({
 		"show character c pointer_open at left",
 
 		"c Niko mentioned you're involved in social justice movements here on our islands?",
-
-		"e That's right! I'm really passionate about social justice in all areas of life.",
 		"hide character c",
 		"show character c neutral_open at left",
+		"e That's right! I'm really passionate about social justice in all areas of life.",
 		
-		"e So, Clara..What's your background with social justice issues?",
-		"hide character e neutral_neutral",
+		"hide character e",
 		"show character e closed_pursed_crossed at right",
-		"hide character e closed_pursed_crossed", //esperenza's eyes closed starting here. 
+		"e So, Clara..What's your background with social justice issues?",
+		"hide character e", //esperenza's eyes closed starting here. 
+		"show character e neutral_neutral at right",
 		//"hide character e",
 		
 		"jump multisel",
@@ -101,8 +105,8 @@ monogatari.script ({
 		"show character t smiling at center",
 
 		"t Clara, will you walk with me?",
-		"hide character t",
 		"c Sure!",
+		"hide character t",
 		"hide character c",
 		"hide character e",
 		//"show character t neutral at center",
@@ -112,9 +116,9 @@ monogatari.script ({
 	],
 
 	"walk" : [
-		"clear",
-		//'show image TheDisastersComic1.png', //not showing!!!! 
-		'show scene disaster',
+		//"clear",
+		"show image TheDisastersComic1.png", //not showing!!!! 
+		//'show scene disaster',
 		{"Choice": {
 			"Text": "Continue Reading?",
 
@@ -127,9 +131,9 @@ monogatari.script ({
 	],
 
 	"back" : [
-		//'hide image TheDisastersComic1.png',
-		"clear",
-		"show scene the_center",
+		'hide image TheDisastersComic1.png',
+		//"clear",
+		//"show scene the_center",
 		"You return to the FNB table as Tita finishes speaking.",
 		"show scene the_center",
 		"show character t neutral at center with dissolve",
@@ -168,12 +172,24 @@ monogatari.script ({
 			
 			"Resist": {
 				"Text": "We should resist. (Esperansa's approach)",
+				/*"func": () => {
+					monogatari.storage('pchoice') = "res";
+				},*/
+				'onChosen': function () {
+					monogatari.storage().pchoice = "res";
+				},
 				"Do": "jump res",
 
 			},
 
 			"Evacuate": {
 				"Text": "We should evacuate. (Tita's approach)",
+				/*"func": () => {
+					monogatari.storage('pchoice') = "eva";
+				},*/
+				'onChosen': function () {
+					monogatari.storage().pchoice = "eva";
+				},
 				"Do": "jump eva",
 			},
 			
@@ -181,7 +197,7 @@ monogatari.script ({
 	],
 
 	"res" : [
-		'show image resist.png center with fadeIn', //not showing!!!
+		//'show image resist.png center with fadeIn', 
 		"c I think we should resist!",
         "e We have to demand an end to the military buildup!",
 
@@ -210,12 +226,12 @@ monogatari.script ({
         "c I'll get those communications out as soon as possible.",
         "e We need to print 100 posters but the printer has a bug and only prints 2.",
 		"e If you can get this working, we can really start a movement!",
-		"hide image resist.png",
+		//"hide image resist.png",
 		"hide character e",
 		"jump get_ready",
 	],
 	"eva" : [
-		'show image evacuate.png center with fadeIn',
+		//'show image evacuate.png center with fadeIn',
 		"c I think we need to evacuate!",
         "t Refugees from Tinian and Pågan are our most vulnerable!",
         "e It's a tough choice, but I'm glad you'll be supporting the refugees Clara",
@@ -239,7 +255,7 @@ monogatari.script ({
         "c And I do have experience hacking past an artificial block Niko put on my own machine.",
         "c Let me have a look at the printer's source code.",
         "c I'll try to get 100 posters printing!",
-		'hide image evacuate.png',
+		//'hide image evacuate.png',
 		"hide character t",
 		"jump get_ready",
 	],
