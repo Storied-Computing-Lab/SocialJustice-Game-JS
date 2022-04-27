@@ -6,7 +6,7 @@ monogatari.script ({
 	'hack2_storyBefore': [
 		"clear",
 		"After a few hours, you decide to head to the town center",
-		"show scene the_center",
+		"show scene beach_city",
 	
 		"You come to the table that says 'Food Not Bombs'",
 		"People are serving food to anyone who walks by, for free.",
@@ -116,26 +116,15 @@ monogatari.script ({
 	],
 
 	"walk" : [
-		//"clear",
-		"show image TheDisastersComic1.png", //not showing!!!! 
-		//'show scene disaster',
-		{"Choice": {
-			"Text": "Continue Reading?",
+		"show image TheDisastersComic1.png", 
+		"wait",
 
-			"No": {
-				"Text": "Ready to move on!",
-				"Do": "jump back",
-			},
-			
-		}},
+		"jump back",
 	],
 
 	"back" : [
 		'hide image TheDisastersComic1.png',
-		//"clear",
-		//"show scene the_center",
 		"You return to the FNB table as Tita finishes speaking.",
-		"show scene the_center",
 		"show character t neutral at center with dissolve",
 		"show character c neutral_open at left with fadeIn",
 		"show character e neutral_neutral at right with fadeIn",
@@ -176,7 +165,7 @@ monogatari.script ({
 					monogatari.storage('pchoice') = "res";
 				},*/
 				'onChosen': function () {
-					monogatari.storage().pchoice = "res";
+					monogatari.storage().pchoice = "for the resistance"; //the phrasing of this text is used elsewhere in Dialouge
 				},
 				"Do": "jump res",
 
@@ -188,7 +177,7 @@ monogatari.script ({
 					monogatari.storage('pchoice') = "eva";
 				},*/
 				'onChosen': function () {
-					monogatari.storage().pchoice = "eva";
+					monogatari.storage().pchoice = "for the evacuation"; //the phrasing of this text is used elsewhere in Dialouge
 				},
 				"Do": "jump eva",
 			},
@@ -213,19 +202,14 @@ monogatari.script ({
 		"hide character t",
         "Esperansa and you start discussing resistance and anti-colonialism as Tita returns to the Task Force building.",
         "e We are gathering together from all over the Northern Marianas Islands to protest against the buildup.",
-        "e However, we need to send the posters digitally through unofficial channels.",
-        "e One of our tactics is striking, and we want our organizing communications to remain confidential.",
-        "e Do you have any experience hacking source code?",
-        "e There may be a way to send 100 posters automatically through a more secure channel.",
-        "c I do actually! Niko suggested that you all needed help with digital communications.",
-        "c And I do have experience hacking past an artificial block Niko put on my own machine.",
+		"e Since one of our tactics is striking, we are trying to get the word out with digital and printed posters sent through unofficial channels.",
+		"e However, the city has been witholding technical support for local libraries because they know we do a lot of our agitation and organizing in free spaces like community centers and libraries.",
+        "e Do you have any experience hacking source code? There may be a way to send 100 posters automatically through a secure channel.",
+        "c I do actually! Niko suggested that you all needed help with digital communications. And I do have experience hacking past an artificial block Niko put on my own machine.",
 		"e Your skills are exactly what we need to get these posters out Clara!",
-        "e We have to light a fire in people's hearts",
-        "e Our language, our land, and our lives depend on it.",
-		"c Let me have a look at the remote printer's source code.",
-        "c I'll get those communications out as soon as possible.",
-        "e We need to print 100 posters but the printer has a bug and only prints 2.",
-		"e If you can get this working, we can really start a movement!",
+        "e We have to light a fire in people's hearts. Our language, our land, and our lives depend on it.",
+		"c Let me have a look at the remote printer's source code. I'll get those communications out as soon as possible.",
+        "e We need to print 100 posters but the printer has a bug and only prints 2. If you can get this working, we can really start a movement!",
 		//"hide image resist.png",
 		"hide character e",
 		"jump get_ready",
@@ -249,21 +233,23 @@ monogatari.script ({
 		"show character t neutral at center",
         "t We are getting the word out to people about resources provided by the Evacuation Task Force.",
         "t We need to print 100 posters but the printer has a bug and only prints 2.",
-    	"t We think there is a bug in the source code of the printer at the Center for Chamoru rights.",
-        "t Do you have experience hacking source code? There may be a way to reprogram the printer to print 100 posters instead of just 2.",
+        "t Do you have experience hacking source code? There may be a way to fix the printer's source code so it prints 100 instead of only 2.",
         "c I do actually! Niko suggested that you all needed help with digital communications.",
         "c And I do have experience hacking past an artificial block Niko put on my own machine.",
-        "c Let me have a look at the printer's source code.",
-        "c I'll try to get 100 posters printing!",
+        "c Let me have a look at the printer's source code. I'll try to get 100 posters printing!",
 		//'hide image evacuate.png',
 		"hide character t",
 		"jump get_ready",
 	],
 	
 	"get_ready": [
+		"show scene the_center",
 		"You walk to the Center for Chamoru Rights and you find the printer and plug in your laptop",
     	"You are able to extract the source code from the printer",
-    	"c Alright, time to get this working!",
+		"c Alright, time to get this working!",
+		'Looks like Niko has been working on the printer before you got here.',
+		'He left you a hint',
+		'n Here is a short coding exercise that might help you when you reprogram the printer. Try it first?',
 		"jump hack_2",
 	],
 

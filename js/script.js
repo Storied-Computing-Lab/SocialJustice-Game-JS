@@ -64,13 +64,14 @@ monogatari.assets ('videos', {
 
 // Define the images used in the game.
 monogatari.assets ('images', {
-
+	"textbox" : "textbox.png"
 });
 
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
 	"the_center": "tinian-japaneseGate.png",
 	"disaster": "TheDisastersComic1.png",
+	"beach_city": "beach-city-by-aurora-kreativ.jpg",
 });
 
 
@@ -101,7 +102,8 @@ monogatari.characters ({
 		sprites: {
 			"slight_smile": "niko_neutral_eyes_slight_smile.png",
 			"neutral": "niko_neutral_eyes_neutral.png",
-			"worried": "niko_neutral_eyes_worried.png"
+			"worried": "niko_neutral_eyes_worried.png",
+			"mischevious": "niko_neutral_eyes_mischevious.png",
 		}
 	},
 
@@ -130,7 +132,8 @@ monogatari.characters ({
 			"neutral":"tita_neutral.png",
 			"smiling": "tita_smiling.png",
 		}
-	}
+	},
+
 });
 
 monogatari.script ({
@@ -139,7 +142,7 @@ monogatari.script ({
 
 	// jump to first chapter
 	'Start': [
-		"jump a_The_Center",
+		"jump hack1_storyBefore",
 	]
 
 });
