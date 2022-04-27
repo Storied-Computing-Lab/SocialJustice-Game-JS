@@ -29,10 +29,10 @@ function print100Posters() {
 	*/
 
 	//hint: the comments above should be useful!
-	//printPosterOnce();
-	//printPosterOnce();
-	for (let i = 0; i < 100; i++) {
+	let bound = 100;
+	for (let i = 0; i < bound; i++) {
 		printPosterOnce();
 	}
+	
 	// A challenge: If you haven't already, can you make the function print exactly 100 posters?
 }
