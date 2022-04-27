@@ -12,7 +12,7 @@ function main () {
     To see the Console go to View -> Developer -> JavaScript Console.
     */
 
-    return "Niko wuz here";
+    return "Niko was here";
 }
 
 
