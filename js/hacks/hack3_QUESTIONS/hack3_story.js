@@ -2,6 +2,9 @@ monogatari.script ({
     'hack3_storyBefore': [
         // intro 
         "show scene the_frontgate",
+        "The posters you printed helped spread the word. Hundreds of people reached out expressing their desire to help",
+        "And their help would be needed very soon....",
+        "A few days later, Esperansa meets you again with some concerning news",
         "show character e neutral_crossed at left with fadeIn",
         "show character c neutral_open at right with fadeIn",
         "e Clara, we have a problem!",
