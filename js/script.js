@@ -70,7 +70,6 @@ monogatari.assets ('images', {
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
 	"the_center": "tinian-japaneseGate.png",
-	"the_frontgate":"front_gate.png",
 	"disaster": "TheDisastersComic1.png",
 	"beach_city": "beach-city-by-aurora-kreativ.jpg",
 });
