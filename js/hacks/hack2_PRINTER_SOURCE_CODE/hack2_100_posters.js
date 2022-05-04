@@ -41,6 +41,8 @@ function hello_for_loop() {
 	This exercise checks for any logs using console.log before you can move on to the next part. 
 */
 
+
+
 // Below, change what this printer function does. This is your hack 2 exercise :) 
 /*
 	### PART 3 ### 

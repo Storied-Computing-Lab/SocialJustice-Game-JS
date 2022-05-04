@@ -60,6 +60,7 @@ monogatari.script({
 		'Heres the poster we need {{pchoice}}',
 		{'Conditional': {
 			'Condition': () => {
+				console.log(monogatari.storage('pchoice'));
 				return  monogatari.storage('pchoice') == "for the resistance";
 			},
 			'True': 'show image resist.png center with fadeIn',

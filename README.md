@@ -1,9 +1,3 @@
-# Hint for the first hack
-You can find Niko's hack at this location:
-
-Go to
-js/hacks/hack1_NIKO_HACKED_YOU/hack1_niko_wuz_here_lol.js
-
 # SocialJustice-Game-JS
 Monogatari version of SocialJustice-Game
 
