@@ -254,7 +254,13 @@ monogatari.script ({
 	],
 
 	'hack2_storyAfter': [
-		"We made it to the hack_storyAfter label",
-		"We made it to the after party",
+		{'Conditional': {
+			'Condition': () => {
+				return  monogatari.storage('pchoice') == "for the resistance";
+			},
+			'True': 'hide image resist.png center with fadeIn',
+			'False': 'hide image evacuate.png center with fadeIn',
+		}},
+		"jump hack3_storyBefore",
 	]
 })
