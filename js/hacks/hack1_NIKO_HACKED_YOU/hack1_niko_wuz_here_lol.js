@@ -8,12 +8,12 @@ function main () {
     /*
     Welcome to your first hack!
     All you have to do is this:
-    Change "Niko wuz here" to a new message & view your modification in the console
+    Change "Niko wuz here" to a new message & view your modification in the console.
 
     Press command + s to save changes here.
     Go to Console to see your output.
-    MAC users: To see the Console press Cmd + Option + J
-    Windows users: To see the Console press Ctrl +Shift +J
+    MAC users: To see the Console press Cmd + Option + J.
+    Windows users: To see the Console press Ctrl +Shift +J.
     */
 
     //BONUS: Can you print another message below the first?
@@ -25,13 +25,13 @@ function main () {
 NOTE! THE FOLLOWING FUNCTIONS BELOW ARE NOT REQUIRED TO SOLVE HACK 1 THEY ARE BONUS CHALLENGES!
 
 The following code below are functions, which are a block of code designed to perform
-a particular tasks. A function is executed when it is called
+a particular tasks. A function is executed when it is called.
 */
 
 function eliminateVirus() {
     /*
-    When this function is called it will return the string below
-    How to use: write eliminateVirus after the return statement in the main function
+    When this function is called it will return the string below.
+    How to use: write eliminateVirus after the return statement in the main function.
     */
     return "Virus has been eliminated";
 }
