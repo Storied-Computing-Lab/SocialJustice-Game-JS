@@ -10,7 +10,7 @@ monogatari.script ({
         "c Oh no, what's wrong Esperansa?",
         
         "hide character e",
-		"show character e angry_crossed at left with fadeIn",
+        "show character e angry_crossed at left with fadeIn",
         "e The navy is trying to poison the soil.",
 
         "hide character c",
