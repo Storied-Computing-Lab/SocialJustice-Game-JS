@@ -183,10 +183,8 @@ monogatari.script ({
 	],
 
 	"res" : [
-		//'show image resist.png center with fadeIn', 
 		"c I think we should resist!",
 		"e We have to demand an end to the military buildup!",
-
 		"e Clara, we are gathering people to start protests and even striking.",
 		"hide character t",
 		"show character t neutral at center",
