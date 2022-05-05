@@ -226,7 +226,7 @@ monogatari.script ({
         'show message CRITIQUE_ABILITY',
         "c Why do you say they aren't racist?",
         "n They don't say racist things or discriminate against me for being Chamoru",
-        "n I mean, it does piss me off when they say shit about the poorer parts of town. ..and those parts of town have a lot more Chamorus...",
+        "n I mean, it's really messed up some of the things they say about the poorer parts of town. ..and those parts of town have a lot more Chamorus...",
         "n but they never say anything to me.",
         "jump open_him_up_WITH_CONDITIONAL",
     ],
