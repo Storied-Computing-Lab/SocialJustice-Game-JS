@@ -1,6 +1,5 @@
 'use strict';
 /* global Monogatari */
-/* global monogatari */
 
 /**
  * =============================================================================
@@ -26,7 +25,6 @@
 const { $_ready, $_ } = Monogatari;
 
 // 1. Outside the $_ready function:
-
 
 // Create statistics screen
 
@@ -81,7 +79,6 @@ $_ready (() => {
 	// 2. Inside the $_ready function:
 
 	monogatari.registerComponent(StatisticsScreen);
-
 	monogatari.init ('#monogatari').then (() => {
 		// 3. Inside the init function:
 
@@ -89,3 +86,8 @@ $_ready (() => {
 });
 
 
+function updateCode() {
+	const curLabel = monogatari.state().label;
+	localStorage.setItem('codeUpdatedFrom', curLabel);
+	window.location.reload();
+}
