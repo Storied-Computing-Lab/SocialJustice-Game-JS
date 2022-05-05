@@ -43,7 +43,7 @@ monogatari.script ({
         "c Hmm, if everyone were to get at least five questions from different people, would that be enough?",
 
         "hide character e",
-		"show character e neutral_neutral at left with fadeIn",
+        "show character e neutral_neutral at left with fadeIn",
 
         "e Yes, I think it would be!",
 
