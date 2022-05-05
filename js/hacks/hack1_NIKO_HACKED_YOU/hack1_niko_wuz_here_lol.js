@@ -4,7 +4,7 @@ In JavaScript computers do not read '//' which is used to comment a single line.
 To comment out multiple lines, use /*.
 */
 
-function main () {
+function hack1_main () {
     /*
     Welcome to your first hack!
     All you have to do is this:

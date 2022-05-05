@@ -3,8 +3,8 @@
 function check_nikos_hack() {
     // check if nikos hack was fixed
 
-    playerOutput = main()
-    if (main() != "Niko wuz here") {
+    playerOutput = hack1_main()
+    if (hack1_main() != "Niko wuz here") {
         console.log(playerOutput)
         monogatari.storage({
             hack_1: true,
