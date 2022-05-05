@@ -36,7 +36,7 @@ function eliminateVirus() {
     return "Virus has been eliminated";
 }
 
-//Here's a challenge!
+//Here's a more difficult challenge!
 function nameYourFunction(message) {
     /*
     Functions can also take arguments which can be numbers, strings, etc. In this case
