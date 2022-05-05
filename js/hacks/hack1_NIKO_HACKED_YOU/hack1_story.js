@@ -202,7 +202,7 @@ monogatari.script ({
                         s_y_g: s_y_g + 10,
                     });
                     monogatari.storage({
-                        are_hacker_boyz_racist: "the shit they say about poorer folks in Dededo",
+                        are_hacker_boyz_racist: "the things they say about poorer folks in Dededo",
                     });
                 },
                 "Do": "jump critique",
