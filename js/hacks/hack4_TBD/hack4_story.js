@@ -1,5 +1,5 @@
 monogatari.script ({
-    'a_Hack4': [
+    'hack4_storyBefore': [
         // Hack4 Skeleton code
         "clear",
         "centered Welcome to Hack 4!",
@@ -55,7 +55,11 @@ monogatari.script ({
         //In this hack you will design a coding problem that needs to be fixed in the hack_4_function file
         // In order to check that your players completed the hack correctly use check_hack_4.js
         //once you are ready to check your function use the below line
-        'jump check',
-
+        'jump hack4_check',
+    ],
+    
+    'hack4_storyAfter': [
+        'This is the end of your Hack4 story. Or is it??',
+        'Customize your hack now!',
     ]
 })

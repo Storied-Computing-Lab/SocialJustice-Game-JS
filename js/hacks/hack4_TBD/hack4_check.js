@@ -13,7 +13,7 @@ function check_hack4_string_hack () {
     return
 }
 monogatari.script({
-    'check': [
+    'hack4_check': [
         "show scene the_center",
         'c need to complete hack4 still',
         check_hack4_string_hack,
@@ -21,14 +21,15 @@ monogatari.script({
             'Condition': () => {
                 return  monogatari.storage('hack_4');
             },
-            'True': 'jump fixed',
-            'False': 'jump check',
+            'True': 'jump hack4_fixed',
+            'False': 'jump hack4_check',
         }},
     ],
 
 
-    'fixed': [
-        'c Congratulations you finished Hack4!',
+    'hack4_fixed': [
+        'c Congratulations your player has finished your Hack4!',
+        'jump hack4_storyAfter',
     ],
 
 
