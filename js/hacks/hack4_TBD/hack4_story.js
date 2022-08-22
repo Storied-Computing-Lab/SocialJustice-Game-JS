@@ -61,5 +61,6 @@ monogatari.script ({
     'hack4_storyAfter': [
         'This is the end of your Hack4 story. Or is it??',
         'Customize your hack now!',
+        'end', //OR IS IT??
     ]
 })
