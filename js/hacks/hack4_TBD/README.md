@@ -5,18 +5,18 @@ It is now your turn to implement your own hacks!! We know this may be a daunting
 
 Here is a quick explanation of the files in this directory that will help you build your Hack 4 implementation.
 
-- [a_Hack4.js](#a_Hack4.js)
-- [hack_4_function](#hack_4_function)
-- [check_hack4.js](#check_hack4.js)
+- [hack4_story.js](#hack4_story.js)
+- [hack4_TBD](#hack4_TBD)
+- [hack4_check.js](#hack4_check.js)
 
 
 
-## a_Hack4.js
+## hack4_story.js
 This file is where you can write your script. There is a skeleton code that walks through all the different techniques to build your script and scene.
 
-## hack_4_function.js
-This file is where you write the function/code  players need to fix in order to solve the hack.
-## check_hack4.js
+## hack4_TBD.js
+This file is where you write the function/code  players need to fix in order to solve the hack. Change TBD to whatever you want.
+## hack4_check.js
 This file is used to check if players have solved the hack correctly. Currently, the check for this level is always true and does not stop players if they haven't solved the 
 hack. As you are the designer of this level it is your job to write a conditional statement to block players from continuing 
 without solving the hack. Here are some examples that might be useful for you. If you would like to check if the player's answer is the exact same as the correct answer than set player_answer == correct_answer as you conditional statment. If you want the player's 
