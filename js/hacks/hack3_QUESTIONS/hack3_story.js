@@ -83,8 +83,7 @@ monogatari.script ({
         "How did feel?",
         "What did you learn?",
         "How will you take further action in your community?",
-        //"jump hack4_story" //Students will implement this part!
-        "end" //but it doesn't have to end here!
+        "jump hack4_storyBefore",
     ]
 
 });
