@@ -45,7 +45,8 @@ monogatari.settings({
 	'AutoSaveLabel': 'AutoSave',
 
 	// Turn main menu on/off; Default: true *
-	'ShowMainScreen': true,
+	'ShowMainScreen': localStorage.getItem('codeUpdatedFrom') === null
+		|| localStorage.getItem('codeUpdatedFrom') === 'null',
 
 	// Turn image preloading on/off, Default: true
 	'Preload': true,
